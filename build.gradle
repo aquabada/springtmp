@@ -21,8 +21,8 @@ configurations {
 }
 
 bootJar {
-  baseName = 'gs-spring-boot'
-  version =  '0.1.0'
+  baseName = 'springtmp'
+  version =  '1.0'
 }
 
 repositories {
@@ -33,8 +33,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-  compile("org.springframework.boot:spring-boot-starter-web")
-  compile("org.springframework.boot:spring-boot-starter-actuator")
+  implementation("org.springframework.boot:spring-boot-starter-web")
+  implementation("org.springframework.boot:spring-boot-starter-actuator")
 
-  testCompile("org.springframework.boot:spring-boot-starter-test")
 }
