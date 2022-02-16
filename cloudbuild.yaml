@@ -1,5 +1,5 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gradle'
+  - name: 'gcr.io/cloud-builders/gradle:7.0.2-jdk-11'
     entrypoint: bash
     args: ['./scripts/build.bash']
     volumes:
