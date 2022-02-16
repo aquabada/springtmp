@@ -1,36 +1,20 @@
-buildscript {
-  repositories {
-    mavenCentral()
-  }
-  dependencies {
-    classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
-  }
+plugins {
+  id 'org.springframework.boot' version '2.5.1'
+  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+  id 'java'
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+group = 'hello'
+version = '1.0'
+sourceCompatibility = '11'
 
-configurations {
-  developmentOnly
-    runtimeClasspath {
-      extendsFrom developmentOnly
-    }
-}
 
-bootJar {
-  baseName = 'springtmp'
-  version =  '1.0'
-}
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 
 repositories {
   mavenCentral()
 }
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 dependencies {
   implementation("org.springframework.boot:spring-boot-starter-web")
