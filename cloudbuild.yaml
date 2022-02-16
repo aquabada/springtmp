@@ -1,7 +1,13 @@
 steps:
   - name: 'gcr.io/cloud-builders/gradle'
-    entrypoint: bash
-    args: ['./scripts/build.bash']
-    volumes:
-      - name: 'jar'
-        path: /jar
+      entrypoint: bash
+      args: ['./scripts/build.bash']
+      volumes:
+        - name: 'jar'
+          path: /jar
+  - name: 'gcr.io/cloud-builders/gcloud'
+      entrypoint: bash
+      args: ['./scripts/deploy.bash']
+      volumes:
+        - name: 'jar'
+          path: /jar
