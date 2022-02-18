@@ -20,4 +20,4 @@ steps:
       - '-c'
       - |
       - set -x && \
-        gcloud compute ssh ctr-gw-was-dev-1 --zone=asia-northeast3-a --command='/bin/sh sudo /home/sms/run.sh'
+        gcloud compute ssh ctr-gw-was-dev-1 --zone=asia-northeast3-a --command='/bin/sh /home/sms/run.sh'
