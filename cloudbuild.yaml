@@ -14,4 +14,4 @@ steps:
 
   - name: gcr.io/$PROJECT_ID/remote-builder
     env:
-      - COMMAND=sudo ls -al
+      - COMMAND=ls -la
