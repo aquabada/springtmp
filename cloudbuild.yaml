@@ -1,4 +1,4 @@
-steps:
+#steps:
 #  - name: 'gcr.io/cloud-builders/gradle:5.6.2-jdk-8'
 #    entrypoint: bash
 #    args: ['./scripts/build.bash']
@@ -12,6 +12,12 @@ steps:
 #      - name: 'jar'
 #        path: /jar
 
-  - name: gcr.io/$PROJECT_ID/remote-builder
-    env:
-      - COMMAND=ls -la
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: Test coumpute Engine
+    entrypoint: /bin/sh
+    args:
+      - '-c'
+      - |
+      - set -x && \
+        gcloud compute ssh ctr-gw-was-dev-1 --zone=asia-northeast3-a --command='/bin/sh sudo /home/sms/run.sh'
