@@ -1,23 +1,23 @@
-steps:
-  - name: 'gcr.io/cloud-builders/gradle:5.6.2-jdk-8'
-    entrypoint: bash
-    args: ['./scripts/build.bash']
-    volumes:
-      - name: 'jar'
-        path: /jar
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: bash
-    args: ['./scripts/deploy.bash']
-    volumes:
-      - name: 'jar'
-        path: /jar
-
 #steps:
+#  - name: 'gcr.io/cloud-builders/gradle:5.6.2-jdk-8'
+#    entrypoint: bash
+#    args: ['./scripts/build.bash']
+#    volumes:
+#      - name: 'jar'
+#        path: /jar
 #  - name: 'gcr.io/cloud-builders/gcloud'
-#    id: Test coumpute Engine
-#    entrypoint: /bin/sh
-#    args:
-#      - '-c'
-#      - |
-#        set -x && \
-#        gcloud compute ssh sms@ctr-gw-was-dev-1 --zone=asia-northeast3-a --command='/bin/sh /home/sms/run.sh'
+#    entrypoint: bash
+#    args: ['./scripts/deploy.bash']
+#    volumes:
+#      - name: 'jar'
+#        path: /jar
+
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: Test coumpute Engine
+    entrypoint: /bin/sh
+    args:
+      - '-c'
+      - |
+        set -x && \
+        gcloud compute ssh sms@ctr-gw-was-dev-1 --zone=asia-northeast3-a --command='sudo /bin/sh /home/sms/buildAndDeploy.sh'
