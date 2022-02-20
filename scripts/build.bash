@@ -1,3 +1,5 @@
+# goto /home/account/buildAndDeploy.sh
+
 #git clone https://myeungsu-son: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@github.com/myeungsu-son/vntg-ngw-api.git
 #https://myeungsu-son@github.com/VntgCorp/vntg-ngw-api.git
 #https://myeungsu-son@bitbucket.org/culturit_bryan/vntg-ngw-batch.git
